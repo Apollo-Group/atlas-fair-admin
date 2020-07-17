@@ -4,11 +4,14 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import BusinessIcon from '@material-ui/icons/Business';
+import InfoIcon from '@material-ui/icons/Info';
+import StorefrontIcon from '@material-ui/icons/Storefront';
 import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import LayersIcon from '@material-ui/icons/Layers';
-import AssignmentIcon from '@material-ui/icons/Assignment';
+import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';
+import DateRangeIcon from '@material-ui/icons/DateRange';
+import SchoolIcon from '@material-ui/icons/School';
+import TheatersIcon from '@material-ui/icons/Theaters';
 
 export const mainListItems = (
   <div>
@@ -20,27 +23,51 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <InfoIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Informações Feira" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <StorefrontIcon />
+      </ListItemIcon>
+      <ListItemText primary="Expositores" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Visitantes" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <BarChartIcon />
+        <BusinessIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Patrocinadores" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+        <ViewCarouselIcon />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Banners" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <TheatersIcon />
+      </ListItemIcon>
+      <ListItemText primary="Palestras" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <SchoolIcon />
+      </ListItemIcon>
+      <ListItemText primary="Workshops" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <DateRangeIcon />
+      </ListItemIcon>
+      <ListItemText primary="Agenda" />
     </ListItem>
   </div>
 );
@@ -48,7 +75,7 @@ export const mainListItems = (
 export const secondaryListItems = (
   <div>
     <ListSubheader inset>Saved reports</ListSubheader>
-    <ListItem button>
+   {/*  <ListItem button>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
@@ -65,6 +92,6 @@ export const secondaryListItems = (
         <AssignmentIcon />
       </ListItemIcon>
       <ListItemText primary="Year-end sale" />
-    </ListItem>
+    </ListItem> */}
   </div>
 );
