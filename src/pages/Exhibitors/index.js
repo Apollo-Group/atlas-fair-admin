@@ -18,7 +18,20 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+
 import { mainListItems, secondaryListItems } from '../../components/SiderMenu';
+import Title from '../../components/Title';
+
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button'
+import SaveIcon from '@material-ui/icons/Save';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
+import { GeneralForm, FilesForm, BoothForm } from './styles'
 
 function Copyright() {
   return (
@@ -112,6 +125,9 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  input: {
+    display: 'none',
+  },
 }));
 
 export default function Dashboard() {
@@ -172,20 +188,103 @@ export default function Dashboard() {
           <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <h1>Componente 1</h1>
+              <Paper className={classes.paper}>
+                <h1>Dados do Expositor</h1>
+                <form>
+                  <GeneralForm>
+                    <TextField required id="outlined-required" label="Title" defaultValue="Nome do Expositor" variant="outlined" style={{ width: '100%' }} />
+                    <input
+                      accept="image/*"
+                      className={classes.input}
+                      id="contained-button-file"
+                      multiple
+                      type="file"
+                    />
+                    <FormControl variant="outlined" className={classes.formControl} style={{ width: '50%', marginTop: 30 }}>
+                      <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
+                      <Select
+                        labelId="demo-simple-select-outlined-label"
+                        id="demo-simple-select-outlined"
+                        value={false}
+                        onChange={() => { }}
+                        label="category"
+                      >
+                        <MenuItem value="">
+                          <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Software</MenuItem>
+                        <MenuItem value={20}>Hardware</MenuItem>
+                        <MenuItem value={30}>Outros</MenuItem>
+                      </Select>
+                    </FormControl>
+                    <TextField
+                      required
+                      id="outlined-multiline-static"
+                      label="Description"
+                      multiline
+                      rows={4}
+                      defaultValue="Criamos nossa empresa em 1990..."
+                      variant="outlined"
+                      style={{ width: '100%', marginTop: 30 }}
+                    />
+                  </GeneralForm>
+
+                  <FilesForm>
+                    <Title>Upload de Arquivos </Title>
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 30 }}>
+                        Adicionar Logo
+                     </Button>
+                    </label>
+                  </FilesForm>
+
+                  <BoothForm>
+                  <Title>Dados do Estande </Title>
+                    <FormControl variant="outlined" className={classes.formControl} style={{ width: '50%', marginTop: 30 }}>
+                      <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
+                      <Select
+                        labelId="demo-simple-select-outlined-label"
+                        id="demo-simple-select-outlined"
+                        value={false}
+                        onChange={() => { }}
+                        label="category"
+                      >
+                        <MenuItem value="">
+                          <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Tipo A</MenuItem>
+                        <MenuItem value={20}>Tipo B</MenuItem>
+                        <MenuItem value={30}>Tipo C</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </BoothForm>
+
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    className={classes.button}
+                    startIcon={<SaveIcon />}
+                    style={{ width: '80%', marginLeft: '10%', marginTop: 30}}
+                  >
+                    Salvar
+                 </Button>
+                </form>
               </Paper>
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-              <h1>Componente 1</h1>
+                <Title>Expositores Cadastrados</Title>
+                <Typography component="p" variant="h4">
+                  240
+               </Typography>
               </Paper>
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-              <h1>Componente 1</h1>
+                <h1>Componente 1</h1>
               </Paper>
             </Grid>
           </Grid>
