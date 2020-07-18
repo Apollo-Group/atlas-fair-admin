@@ -6,6 +6,8 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import PersonIcon from '@material-ui/icons/Person';
+
 import Title from '../Title';
 
 // Generate Order Data
@@ -43,7 +45,8 @@ export default function Orders() {
             <TableCell>Nome</TableCell>
             <TableCell>Cidade</TableCell>
             <TableCell>Método Pagamento</TableCell>
-            <TableCell align="right">Valor (R$)</TableCell>
+            <TableCell>Valor(R$)</TableCell>
+            <TableCell align="right">Perfil</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -53,7 +56,8 @@ export default function Orders() {
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.shipTo}</TableCell>
               <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
+              <TableCell>{row.amount}</TableCell>
+              <TableCell align="right"><PersonIcon color="action" style={{cursor: "pointer"}}/></TableCell>
             </TableRow>
           ))}
         </TableBody>

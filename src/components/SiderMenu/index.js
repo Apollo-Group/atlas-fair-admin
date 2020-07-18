@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@material-ui/core/Link';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -15,60 +16,78 @@ import TheatersIcon from '@material-ui/icons/Theaters';
 
 export const mainListItems = (
   <div>
+    <Link href="http://localhost:3000/home" >
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItem>
-    <ListItem button>
+    </Link>
+    <Link href="http://localhost:3000/informations" >
+    <ListItem button> 
       <ListItemIcon>
         <InfoIcon />
       </ListItemIcon>
-      <ListItemText primary="Informações Feira" />
+      <ListItemText primary="Informações Evento" />
     </ListItem>
+    </Link>
+    <Link href="http://localhost:3000/exhibitors" >
     <ListItem button>
       <ListItemIcon>
         <StorefrontIcon />
       </ListItemIcon>
       <ListItemText primary="Expositores" />
     </ListItem>
+    </Link>
+    <Link href="http://localhost:3000/visitors" >
     <ListItem button>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
       <ListItemText primary="Visitantes" />
     </ListItem>
+    </Link>
+    <Link href="http://localhost:3000/sponsors" >
     <ListItem button>
       <ListItemIcon>
         <BusinessIcon />
       </ListItemIcon>
       <ListItemText primary="Patrocinadores" />
     </ListItem>
+    </Link>
+    <Link href="http://localhost:3000/banners" >
     <ListItem button>
       <ListItemIcon>
         <ViewCarouselIcon />
       </ListItemIcon>
       <ListItemText primary="Banners" />
     </ListItem>
+    </Link>
+    <Link href="http://localhost:3000/speeches" >
     <ListItem button>
       <ListItemIcon>
         <TheatersIcon />
       </ListItemIcon>
       <ListItemText primary="Palestras" />
     </ListItem>
+    </Link>
+    <Link href="http://localhost:3000/workshops" >
     <ListItem button>
       <ListItemIcon>
         <SchoolIcon />
       </ListItemIcon>
       <ListItemText primary="Workshops" />
     </ListItem>
+    </Link>
+    <Link href="http://localhost:3000/agendas" >
     <ListItem button>
       <ListItemIcon>
         <DateRangeIcon />
       </ListItemIcon>
       <ListItemText primary="Agenda" />
     </ListItem>
+    </ Link>
   </div>
 );
 
