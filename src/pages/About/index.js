@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -18,7 +18,20 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+
+import TextField from '@material-ui/core/TextField';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
+import Button from '@material-ui/core/Button'
+import SaveIcon from '@material-ui/icons/Save';
+
 import { mainListItems, secondaryListItems } from '../../components/SiderMenu';
+
+import { GeneralForm, DateForm } from './styles'
 
 function Copyright() {
   return (
@@ -112,17 +125,28 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  input: {
+    display: 'none',
+  },
 }));
 
 export default function Dashboard() {
+  const [selectedDate, setSelectedDate] = useState(new Date('2020-08-18T21:11:54'));
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
+
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
@@ -171,21 +195,109 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
             {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <h1>Componente 1</h1>
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-              <h1>Componente 1</h1>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <h1>Dados Gerais do Evento</h1>
+
+                <form>
+                  <GeneralForm>
+                    <TextField required id="outlined-required" label="Title" defaultValue="Nome doa Evento" variant="outlined" style={{ width: '100%' }} />
+                    <input
+                      accept="image/*"
+                      className={classes.input}
+                      id="contained-button-file"
+                      multiple
+                      type="file"
+                    />
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span" style={{marginTop: 30}}>
+                        Adicionar Logo
+                     </Button>
+                    </label>
+                    <TextField
+                      required
+                      id="outlined-multiline-static"
+                      label="Description"
+                      multiline
+                      rows={4}
+                      defaultValue="Esse eventao iniciou em 1985 e desde entao..."
+                      variant="outlined"
+                      style={{ width: '100%', marginTop: 30 }}
+                    />
+                    <DateForm>
+                      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                        <div className="start">
+                          <KeyboardDatePicker
+                            disableToolbar
+                            variant="inline"
+                            format="dd/MM/yyyy"
+                            margin="normal"
+                            id="date-picker-inline"
+                            label="Start Date"
+                            value={selectedDate}
+                            onChange={handleDateChange}
+                            KeyboardButtonProps={{
+                              'aria-label': 'change date',
+                            }}
+                          />
+                          <KeyboardTimePicker
+                            margin="normal"
+                            id="time-picker"
+                            label="Start Hour"
+                            value={selectedDate}
+                            onChange={handleDateChange}
+                            KeyboardButtonProps={{
+                              'aria-label': 'change time',
+                            }}
+                          />
+                        </div>
+                        <div className="end">
+                          <KeyboardDatePicker
+                            disableToolbar
+                            variant="inline"
+                            format="dd/MM/yyyy"
+                            margin="normal"
+                            id="date-picker-inline"
+                            label="End Date"
+                            value={selectedDate}
+                            onChange={handleDateChange}
+                            KeyboardButtonProps={{
+                              'aria-label': 'change date',
+                            }}
+                          />
+                          <KeyboardTimePicker
+                            margin="normal"
+                            id="time-picker"
+                            label="End Hour"
+                            value={selectedDate}
+                            onChange={handleDateChange}
+                            KeyboardButtonProps={{
+                              'aria-label': 'change time',
+                            }}
+                          />
+                        </div>
+                      </MuiPickersUtilsProvider>
+                    </DateForm>
+                  </GeneralForm>
+
+
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    className={classes.button}
+                    startIcon={<SaveIcon />}
+                    style={{ width: '80%', marginLeft: '10%' }}
+                  >
+                    Salvar
+                 </Button>
+                </form>
               </Paper>
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-              <h1>Componente 1</h1>
+                <h1>Dados Complementares do Evento</h1>
               </Paper>
             </Grid>
           </Grid>
