@@ -223,48 +223,51 @@ export default function Dashboard() {
                       variant="outlined"
                       style={{ width: '100%', marginTop: 30 }}
                     />
+
+                    <TextField required id="outlined-required" label="Contato Whatsapp" defaultValue="Contato Whatsapp" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <TextField required id="outlined-required" label="Contato Zoom" defaultValue="Contato Zoom" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
                   </GeneralForm>
 
                   <FilesForm>
                     <Title>Upload de Arquivos </Title>
                     <label htmlFor="contained-button-file">
-                      <Button variant="contained" color="primary" component="span" style={{marginTop: 30}}>
+                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 30 }}>
                         Adicionar Logo
                      </Button>
                     </label>
 
                     <label htmlFor="contained-button-file">
-                      <Button variant="contained" color="primary" component="span" style={{marginTop: 30}}>
+                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 30 }}>
                         Adicionar PDF
                      </Button>
                     </label>
                   </FilesForm>
 
                   <BoothForm>
-                  <Title>Dados do Estande </Title>
+                    <Title>Dados do Estande </Title>
                     <div className="layout">
-                    <FormControl variant="outlined" className={classes.formControl} style={{ width: '50%', marginTop: 30 }}>
-                      <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
-                      <Select
-                        labelId="demo-simple-select-outlined-label"
-                        id="demo-simple-select-outlined"
-                        value={false}
-                        onChange={() => { }}
-                        label="category"
-                      >
-                        <MenuItem value="">
-                          <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Tipo A</MenuItem>
-                        <MenuItem value={20}>Tipo B</MenuItem>
-                        <MenuItem value={30}>Tipo C</MenuItem>
-                      </Select>
-                    </FormControl>
-                    <img src={booth} alt="Girl in a jacket" width="40%" height="50%" />
+                      <FormControl variant="outlined" className={classes.formControl} style={{ width: '50%', marginTop: 30 }}>
+                        <InputLabel id="demo-simple-select-outlined-label" style={{width: 300}}>Tipo de Estande</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-outlined-label"
+                          id="demo-simple-select-outlined"
+                          value={false}
+                          onChange={() => { }}
+                          label="category"
+                        >
+                          <MenuItem value="">
+                            <em>None</em>
+                          </MenuItem>
+                          <MenuItem value={10}>Tipo A</MenuItem>
+                          <MenuItem value={20}>Tipo B</MenuItem>
+                          <MenuItem value={30}>Tipo C</MenuItem>
+                        </Select>
+                      </FormControl>
+                      <img src={booth} alt="Girl in a jacket" width="40%" height="50%" />
                     </div>
                     <Title>Upload de Imagens do Estande </Title>
 
-              
+
                     <label htmlFor="contained-button-file">
                       <Button variant="contained" color="primary" component="span" style={{ marginTop: 15 }}>
                         Adicionar Imagem A
@@ -297,7 +300,7 @@ export default function Dashboard() {
                     size="large"
                     className={classes.button}
                     startIcon={<SaveIcon />}
-                    style={{ width: '80%', marginLeft: '10%', marginTop: 30}}
+                    style={{ width: '80%', marginLeft: '10%', marginTop: 30 }}
                   >
                     Salvar
                  </Button>
@@ -307,7 +310,7 @@ export default function Dashboard() {
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-              <Deposits />
+                <Deposits />
               </Paper>
             </Grid>
             {/* Recent Orders */}

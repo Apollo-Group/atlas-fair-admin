@@ -13,6 +13,7 @@ import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import SchoolIcon from '@material-ui/icons/School';
 import TheatersIcon from '@material-ui/icons/Theaters';
+import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 
 export const mainListItems = (
   <div>
@@ -86,6 +87,14 @@ export const mainListItems = (
         <DateRangeIcon />
       </ListItemIcon>
       <ListItemText primary="Agenda" />
+    </ListItem>
+    </ Link>
+    <Link href="http://localhost:3000/agendas" >
+    <ListItem button>
+      <ListItemIcon>
+        <LiveHelpIcon />
+      </ListItemIcon>
+      <ListItemText primary="FAQ" />
     </ListItem>
     </ Link>
   </div>
