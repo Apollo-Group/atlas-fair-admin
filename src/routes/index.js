@@ -11,6 +11,7 @@ import Speeches from '../pages/Speeches'
 import Workshops from '../pages/Workshops'
 import Sponsors from '../pages/Sponsors'
 import Visitors from '../pages/Visitors'
+import FAQ from '../pages/FAQ'
 
 export default function Routes() {
   return (
@@ -45,6 +46,9 @@ export default function Routes() {
         </Route>
         <Route exact  path="/visitors">
           <Visitors />
+        </Route>
+        <Route exact  path="/faq">
+          <FAQ />
         </Route>
       </Switch>
     </Router>

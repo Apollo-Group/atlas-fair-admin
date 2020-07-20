@@ -21,9 +21,8 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 
 import { mainListItems, secondaryListItems } from '../../components/SiderMenu';
 import Title from '../../components/Title';
-import ExhibitorsList from '../../components/ExhibitorsList'
+import SpeechesList from '../../components/SpeechesList'
 import Deposits from '../../components/Visitors'
-import booth from '../../assets/images/booth.jpeg'
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
@@ -347,15 +346,15 @@ export default function Dashboard() {
               </Paper>
             </Grid>
             {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
+        {/*     <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
                 <Deposits />
               </Paper>
-            </Grid>
+            </Grid> */}
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <ExhibitorsList />
+                <SpeechesList />
               </Paper>
             </Grid>
           </Grid>

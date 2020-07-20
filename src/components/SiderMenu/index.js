@@ -14,6 +14,7 @@ import DateRangeIcon from '@material-ui/icons/DateRange';
 import SchoolIcon from '@material-ui/icons/School';
 import TheatersIcon from '@material-ui/icons/Theaters';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 export const mainListItems = (
   <div>
@@ -89,7 +90,7 @@ export const mainListItems = (
       <ListItemText primary="Agenda" />
     </ListItem>
     </ Link>
-    <Link href="http://localhost:3000/agendas" >
+    <Link href="http://localhost:3000/faq" >
     <ListItem button>
       <ListItemIcon>
         <LiveHelpIcon />
@@ -102,7 +103,14 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <div>
-    <ListSubheader inset>Saved reports</ListSubheader>
+    <Link href="http://localhost:3000/" >
+    <ListItem button>
+      <ListItemIcon>
+        <ExitToAppIcon />
+      </ListItemIcon>
+      <ListItemText primary="Sair" />
+    </ListItem>
+    </ Link>
    {/*  <ListItem button>
       <ListItemIcon>
         <AssignmentIcon />

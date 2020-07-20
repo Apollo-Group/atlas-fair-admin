@@ -19,6 +19,22 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from '../../components/SiderMenu';
+import Deposits from '../../components/Visitors';
+import AgendaList from '../../components/AgendaList';
+
+import Button from '@material-ui/core/Button'
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormLabel from '@material-ui/core/FormLabel';
+import SearchIcon from '@material-ui/icons/Search';
+
+import { GeneralForm, FilesForm, BoothForm } from './styles'
+
 
 function Copyright() {
   return (
@@ -125,6 +141,12 @@ export default function Dashboard() {
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
+  const [value, setValue] = React.useState('female');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -140,7 +162,7 @@ export default function Dashboard() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            Sobre o Evento
+            Agenda
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -172,20 +194,74 @@ export default function Dashboard() {
           <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <h1>Componente 1</h1>
+              <Paper className={classes.paper}>
+                <h1>Filtrar Agenda</h1>
+                <form>
+                  <GeneralForm>
+                    <FormControl variant="outlined" className={classes.formControl} style={{ width: '50%', marginTop: 30 }}>
+                      <FormLabel component="legend">Categoria</FormLabel>
+                      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange} color="#f00" >
+                        <FormControlLabel value="female" control={<Radio />} label="Todos" />
+                        <FormControlLabel value="male" control={<Radio />} label="Palestras" />
+                        <FormControlLabel value="other" control={<Radio />} label="Workshops" />
+                      </RadioGroup>
+
+                      <p style={{ marginTop: 30, fontSize: 16 }}>Local</p>
+                      <Select
+                        labelId="demo-simple-select-outlined-label"
+                        id="demo-simple-select-outlined"
+                        value={false}
+                        onChange={() => { }}
+                        label="Genero"
+                      >
+                        <MenuItem value="">
+                          <em>Todos</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Plenaria Principal</MenuItem>
+                        <MenuItem value={20}>Sala 1</MenuItem>
+                      </Select>
+
+                      <p style={{ marginTop: 30, fontSize: 16 }}>Dia</p>
+                      <Select
+                        labelId="demo-simple-select-outlined-label"
+                        id="demo-simple-select-outlined"
+                        value={false}
+                        onChange={() => { }}
+                        label=""
+
+                      >
+                        <MenuItem value="">
+                          <em>Todos</em>
+                        </MenuItem>
+                        <MenuItem value={10}>22/08/2020</MenuItem>
+                        <MenuItem value={20}>23/08/2020</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </GeneralForm>
+
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    className={classes.button}
+                    startIcon={<SearchIcon />}
+                    style={{ width: '80%', marginLeft: '10%', marginTop: 30 }}
+                  >
+                    Filtrar
+                 </Button>
+                </form>
               </Paper>
             </Grid>
             {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
+          {/*   <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-              <h1>Componente 1</h1>
+                <Deposits />
               </Paper>
-            </Grid>
+            </Grid> */}
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-              <h1>Componente 1</h1>
+                <AgendaList />
               </Paper>
             </Grid>
           </Grid>

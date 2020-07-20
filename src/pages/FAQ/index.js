@@ -18,9 +18,11 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+
 import { mainListItems, secondaryListItems } from '../../components/SiderMenu';
-import Deposits from '../../components/Visitors';
-import Orders from '../../components/Orders';
+import Title from '../../components/Title';
+import FAQList from '../../components/FAQList'
+import Deposits from '../../components/Visitors'
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
@@ -32,7 +34,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 import { GeneralForm, FilesForm, BoothForm } from './styles'
-
 
 function Copyright() {
   return (
@@ -126,6 +127,9 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  input: {
+    display: 'none',
+  },
 }));
 
 export default function Dashboard() {
@@ -154,7 +158,7 @@ export default function Dashboard() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            Visitantes
+            FAQ
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -187,54 +191,30 @@ export default function Dashboard() {
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={classes.paper}>
-              <h1>Dados do Visitante</h1>
+                <h1>Crie Pergunta e Resposta</h1>
                 <form>
                   <GeneralForm>
-                    <TextField required id="outlined-required" label="Title" defaultValue="Nome do Visitante" variant="outlined" style={{ width: '100%' }} />
-                    <TextField required id="outlined-required" label="Title" defaultValue="E-mail do Visitante" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
-                    <TextField required id="outlined-required" label="Title" defaultValue="Empresa do Visitante" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
-                    <FormControl variant="outlined" className={classes.formControl} style={{ width: '50%', marginTop: 30 }}>
-                      <InputLabel id="demo-simple-select-outlined-label">Genero</InputLabel>
-                      <Select
-                        labelId="demo-simple-select-outlined-label"
-                        id="demo-simple-select-outlined"
-                        value={false}
-                        onChange={() => { }}
-                        label="Genero"
-                      >
-                        <MenuItem value="">
-                          <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Masculino</MenuItem>
-                        <MenuItem value={20}>Feminino</MenuItem>
-                      </Select>
-
-                      <InputLabel id="demo-simple-select-outlined-label" style={{marginTop: 85}}>Categoria</InputLabel>
-                      <Select
-                        labelId="demo-simple-select-outlined-label"
-                        id="demo-simple-select-outlined"
-                        value={false}
-                        onChange={() => { }}
-                        label="Categoria"
-                        style={{marginTop: 30}}
-                      >
-                        <MenuItem value="">
-                          <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Visitante</MenuItem>
-                        <MenuItem value={20}>Expositor</MenuItem>
-                      </Select>
-                    </FormControl>
                     <TextField
                       required
                       id="outlined-multiline-static"
-                      label="Description"
+                      label="Pergunta"
                       multiline
                       rows={4}
-                      defaultValue="Criamos nossa empresa em 1990..."
+                      defaultValue="Pergunta"
                       variant="outlined"
                       style={{ width: '100%', marginTop: 30 }}
                     />
+                   <TextField
+                      required
+                      id="outlined-multiline-static"
+                      label="Resposta"
+                      multiline
+                      rows={4}
+                      defaultValue="Resposta"
+                      variant="outlined"
+                      style={{ width: '100%', marginTop: 30 }}
+                    />
+                    <TextField required id="outlined-required" label="Ordem da Pergunta" defaultValue="1" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
                   </GeneralForm>
 
                   <Button
@@ -253,13 +233,13 @@ export default function Dashboard() {
             {/* Recent Deposits */}
            {/*  <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits />
+              <Deposits />
               </Paper>
             </Grid> */}
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                <FAQList />
               </Paper>
             </Grid>
           </Grid>
