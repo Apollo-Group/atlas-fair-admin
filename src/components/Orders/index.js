@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import PersonIcon from '@material-ui/icons/Person';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 import Title from '../Title';
 
@@ -46,7 +47,7 @@ export default function Orders() {
             <TableCell>Cidade</TableCell>
             <TableCell>Método Pagamento</TableCell>
             <TableCell>Valor(R$)</TableCell>
-            <TableCell align="right">Perfil</TableCell>
+            <TableCell align="right">Acoes</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -57,7 +58,7 @@ export default function Orders() {
               <TableCell>{row.shipTo}</TableCell>
               <TableCell>{row.paymentMethod}</TableCell>
               <TableCell>{row.amount}</TableCell>
-              <TableCell align="right"><PersonIcon color="action" style={{cursor: "pointer"}}/></TableCell>
+              <TableCell align="right"><PersonIcon color="action" style={{cursor: "pointer", marginRight: 10}}/> <DeleteIcon color="action" style={{cursor: "pointer", color:"#F00"}}/></TableCell>
             </TableRow>
           ))}
         </TableBody>

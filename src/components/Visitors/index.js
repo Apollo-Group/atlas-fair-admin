@@ -23,6 +23,10 @@ export default function Deposits() {
       <Typography component="p" variant="h4">
         3.024
       </Typography>
+      <Title>Estandes Cadastrados</Title>
+      <Typography component="p" variant="h5">
+        264
+      </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
         30 de Agosto de 2020
       </Typography>

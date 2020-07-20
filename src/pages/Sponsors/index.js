@@ -18,7 +18,22 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+
 import { mainListItems, secondaryListItems } from '../../components/SiderMenu';
+import Title from '../../components/Title';
+import SponsorsList from '../../components/SponsorsList'
+import Deposits from '../../components/Visitors'
+
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button'
+import SaveIcon from '@material-ui/icons/Save';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
+import { GeneralForm, FilesForm, BoothForm } from './styles'
 
 function Copyright() {
   return (
@@ -112,6 +127,9 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  input: {
+    display: 'none',
+  },
 }));
 
 export default function Dashboard() {
@@ -140,7 +158,7 @@ export default function Dashboard() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            Sobre o Evento
+            Patrocinadores
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -172,20 +190,74 @@ export default function Dashboard() {
           <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <h1>Componente 1</h1>
+              <Paper className={classes.paper}>
+                <h1>Dados do Patrocinador</h1>
+                <form>
+                  <GeneralForm>
+                    <TextField required id="outlined-required" label="Title" defaultValue="Nome do Expositor" variant="outlined" style={{ width: '100%' }} />
+                    <FormControl variant="outlined" className={classes.formControl} style={{ width: '50%', marginTop: 30 }}>
+                      <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
+                      <Select
+                        labelId="demo-simple-select-outlined-label"
+                        id="demo-simple-select-outlined"
+                        value={false}
+                        onChange={() => { }}
+                        label="category"
+                      >
+                        <MenuItem value="">
+                          <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ouro</MenuItem>
+                        <MenuItem value={20}>Prata</MenuItem>
+                        <MenuItem value={30}>Bronze</MenuItem>
+                      </Select>
+                    </FormControl>
+                    <TextField
+                      required
+                      id="outlined-multiline-static"
+                      label="Description"
+                      multiline
+                      rows={4}
+                      defaultValue="Criamos nossa empresa em 1990..."
+                      variant="outlined"
+                      style={{ width: '100%', marginTop: 30 }}
+                    />
+                  
+                    <TextField required id="outlined-required" label="URL 1" defaultValue="https://www.patrocinador1.com" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                  </GeneralForm>
+
+                  <FilesForm>
+                    <Title>Upload de Arquivos </Title>
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span" style={{marginTop: 30}}>
+                        Adicionar Logo
+                     </Button>
+                    </label>
+                  </FilesForm>
+
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    className={classes.button}
+                    startIcon={<SaveIcon />}
+                    style={{ width: '80%', marginLeft: '10%', marginTop: 30}}
+                  >
+                    Salvar
+                 </Button>
+                </form>
               </Paper>
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-              <h1>Componente 1</h1>
+              <Deposits />
               </Paper>
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-              <h1>Componente 1</h1>
+                <SponsorsList />
               </Paper>
             </Grid>
           </Grid>

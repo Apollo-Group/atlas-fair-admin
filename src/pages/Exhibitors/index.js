@@ -21,6 +21,9 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 
 import { mainListItems, secondaryListItems } from '../../components/SiderMenu';
 import Title from '../../components/Title';
+import ExhibitorsList from '../../components/ExhibitorsList'
+import Deposits from '../../components/Visitors'
+import booth from '../../assets/images/booth.jpeg'
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
@@ -193,13 +196,6 @@ export default function Dashboard() {
                 <form>
                   <GeneralForm>
                     <TextField required id="outlined-required" label="Title" defaultValue="Nome do Expositor" variant="outlined" style={{ width: '100%' }} />
-                    <input
-                      accept="image/*"
-                      className={classes.input}
-                      id="contained-button-file"
-                      multiple
-                      type="file"
-                    />
                     <FormControl variant="outlined" className={classes.formControl} style={{ width: '50%', marginTop: 30 }}>
                       <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
                       <Select
@@ -232,14 +228,21 @@ export default function Dashboard() {
                   <FilesForm>
                     <Title>Upload de Arquivos </Title>
                     <label htmlFor="contained-button-file">
-                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 30 }}>
+                      <Button variant="contained" color="primary" component="span" style={{marginTop: 30}}>
                         Adicionar Logo
+                     </Button>
+                    </label>
+
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span" style={{marginTop: 30}}>
+                        Adicionar PDF
                      </Button>
                     </label>
                   </FilesForm>
 
                   <BoothForm>
                   <Title>Dados do Estande </Title>
+                    <div className="layout">
                     <FormControl variant="outlined" className={classes.formControl} style={{ width: '50%', marginTop: 30 }}>
                       <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
                       <Select
@@ -257,6 +260,35 @@ export default function Dashboard() {
                         <MenuItem value={30}>Tipo C</MenuItem>
                       </Select>
                     </FormControl>
+                    <img src={booth} alt="Girl in a jacket" width="40%" height="50%" />
+                    </div>
+                    <Title>Upload de Imagens do Estande </Title>
+
+              
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 15 }}>
+                        Adicionar Imagem A
+                     </Button>
+                    </label>
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 15 }}>
+                        Adicionar Imagem B
+                     </Button>
+                    </label>
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 15 }}>
+                        Adicionar Imagem C
+                     </Button>
+                    </label>
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 15, marginBottom: 30 }}>
+                        Adicionar Imagem D
+                     </Button>
+                    </label>
+
+                    <Title>Links de Videos do Estande </Title>
+                    <TextField required id="outlined-required" label="URL 1" defaultValue="https://www.youtube.com" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <TextField required id="outlined-required" label="URL 2" defaultValue="https://www.youtube.com" variant="outlined" style={{ width: '100%', marginTop: 15 }} />
                   </BoothForm>
 
                   <Button
@@ -275,16 +307,13 @@ export default function Dashboard() {
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Title>Expositores Cadastrados</Title>
-                <Typography component="p" variant="h4">
-                  240
-               </Typography>
+              <Deposits />
               </Paper>
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <h1>Componente 1</h1>
+                <ExhibitorsList />
               </Paper>
             </Grid>
           </Grid>

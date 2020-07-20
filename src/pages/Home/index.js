@@ -22,6 +22,7 @@ import { mainListItems, secondaryListItems } from '../../components/SiderMenu';
 import Chart from '../../components/Chart';
 import Deposits from '../../components/Visitors';
 import Orders from '../../components/Orders';
+import ExhibitorsList from '../../components/ExhibitorsList'
 
 function Copyright() {
   return (
@@ -189,6 +190,12 @@ export default function Dashboard() {
             <Grid item xs={12}>
               <Paper className={classes.paper}>
                 <Orders />
+              </Paper>
+            </Grid>
+               {/* Recent Exhibitors */}
+               <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <ExhibitorsList />
               </Paper>
             </Grid>
           </Grid>

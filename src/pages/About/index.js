@@ -18,6 +18,8 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import Title from '../../components/Title'
+import PavilionList from '../../components/PavilionList'
 
 import TextField from '@material-ui/core/TextField';
 import {
@@ -298,6 +300,24 @@ export default function Dashboard() {
             <Grid item xs={12}>
               <Paper className={classes.paper}>
                 <h1>Dados Complementares do Evento</h1>
+                <Title>Pavilhão </Title>
+                    <TextField required id="outlined-required" label="Nome do Pavilhão" defaultValue="Nome do Pavilhão" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <TextField required id="outlined-required" label="Descrição do Pavilhão" defaultValue="Descrição do Pavilhão" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    className={classes.button}
+                    startIcon={<SaveIcon />}
+                    style={{ width: '80%', marginLeft: '10%', marginTop:30 }}
+                  >
+                    Salvar
+                 </Button>
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <PavilionList />
               </Paper>
             </Grid>
           </Grid>
