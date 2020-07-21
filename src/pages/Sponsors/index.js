@@ -228,6 +228,13 @@ export default function Dashboard() {
 
                   <FilesForm>
                     <Title>Upload de Arquivos </Title>
+                    <input
+                      accept="image/*"
+                      className={classes.input}
+                      id="contained-button-file"
+                      multiple
+                      type="file"
+                    />
                     <label htmlFor="contained-button-file">
                       <Button variant="contained" color="primary" component="span" style={{marginTop: 30}}>
                         Adicionar Logo

@@ -225,29 +225,69 @@ export default function Dashboard() {
                     />
 
                     <TextField required id="outlined-required" label="Contato Whatsapp" defaultValue="Contato Whatsapp" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
-                    <TextField required id="outlined-required" label="Contato Zoom" defaultValue="Contato Zoom" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <TextField required id="outlined-required" label="Contato Zoom" defaultValue="Contato Zoom" variant="outlined" style={{ width: '100%', marginTop: 30, marginBottom: 30 }} />
+                    <Title>Cartao de visita </Title>
+                    <TextField required id="outlined-required" label="Nome Contato" defaultValue="Contato Joao" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <TextField required id="outlined-required" label="Telefone Contato" defaultValue="Contato Telefone" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <TextField required id="outlined-required" label="Celular Contato" defaultValue="Contato Celular" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <TextField required id="outlined-required" label="Email Contato" defaultValue="Email Email" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <TextField required id="outlined-required" label="Site Web" defaultValue="Contato www." variant="outlined" style={{ width: '100%', marginTop: 30 }} />
                   </GeneralForm>
+
+    {/*               <FilesForm>
+                    <Title>Produtos ou Servico </Title>
+                    <TextField required id="outlined-required" label="Nome Produto" defaultValue="Produto A" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <TextField required id="outlined-required" label="Valor Produto" defaultValue="29,90" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                  </FilesForm> */}
 
                   <FilesForm>
                     <Title>Upload de Arquivos </Title>
+                    <input
+                      accept="image/*"
+                      className={classes.input}
+                      id="contained-button-file"
+                      multiple
+                      type="file"
+                    />
                     <label htmlFor="contained-button-file">
                       <Button variant="contained" color="primary" component="span" style={{ marginTop: 30 }}>
                         Adicionar Logo
                      </Button>
                     </label>
 
+                    <input
+                      accept="image/*"
+                      className={classes.input}
+                      id="contained-button-file"
+                      multiple
+                      type="file"
+                    />
                     <label htmlFor="contained-button-file">
                       <Button variant="contained" color="primary" component="span" style={{ marginTop: 30 }}>
-                        Adicionar PDF
+                        Adicionar PDF 1
+                     </Button>
+                    </label>
+
+                    <input
+                      accept="image/*"
+                      className={classes.input}
+                      id="contained-button-file"
+                      multiple
+                      type="file"
+                    />
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 30 }}>
+                        Adicionar PDF 2
                      </Button>
                     </label>
                   </FilesForm>
+
 
                   <BoothForm>
                     <Title>Dados do Estande </Title>
                     <div className="layout">
                       <FormControl variant="outlined" className={classes.formControl} style={{ width: '50%', marginTop: 30 }}>
-                        <InputLabel id="demo-simple-select-outlined-label" style={{width: 300}}>Tipo de Estande</InputLabel>
+                        <InputLabel id="demo-simple-select-outlined-label" style={{ width: 300 }}>Tipo de Estande</InputLabel>
                         <Select
                           labelId="demo-simple-select-outlined-label"
                           id="demo-simple-select-outlined"
@@ -265,33 +305,22 @@ export default function Dashboard() {
                       </FormControl>
                       <img src={booth} alt="Girl in a jacket" width="40%" height="50%" />
                     </div>
-                    <Title>Upload de Imagens do Estande </Title>
-
-
-                    <label htmlFor="contained-button-file">
-                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 15 }}>
-                        Adicionar Imagem A
-                     </Button>
-                    </label>
-                    <label htmlFor="contained-button-file">
-                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 15 }}>
-                        Adicionar Imagem B
-                     </Button>
-                    </label>
-                    <label htmlFor="contained-button-file">
-                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 15 }}>
-                        Adicionar Imagem C
-                     </Button>
-                    </label>
-                    <label htmlFor="contained-button-file">
-                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 15, marginBottom: 30 }}>
-                        Adicionar Imagem D
-                     </Button>
-                    </label>
 
                     <Title>Links de Videos do Estande </Title>
                     <TextField required id="outlined-required" label="URL 1" defaultValue="https://www.youtube.com" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
-                    <TextField required id="outlined-required" label="URL 2" defaultValue="https://www.youtube.com" variant="outlined" style={{ width: '100%', marginTop: 15 }} />
+
+                    <input
+                      accept="image/*"
+                      className={classes.input}
+                      id="contained-button-file"
+                      multiple
+                      type="file"
+                    />
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span" style={{ marginTop: 30 }}>
+                        Adicionar Imagem do Estande Customizado .PNG
+                     </Button>
+                    </label>
                   </BoothForm>
 
                   <Button
