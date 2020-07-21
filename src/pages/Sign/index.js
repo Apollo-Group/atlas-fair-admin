@@ -86,7 +86,7 @@ export default function SignIn() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Link href="https://modest-darwin-5935e2.netlify.app//home" >
+          <Link href="https://modest-darwin-5935e2.netlify.app/home" >
           <Button
             type="button"
             fullWidth
