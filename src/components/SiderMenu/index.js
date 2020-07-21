@@ -20,7 +20,7 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 
 export const mainListItems = (
   <div>
-    <Link href="http://localhost:3000/home" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/home" >
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />
@@ -28,7 +28,7 @@ export const mainListItems = (
       <ListItemText primary="Dashboard" />
     </ListItem>
     </Link>
-    <Link href="http://localhost:3000/informations" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/informations" >
     <ListItem button> 
       <ListItemIcon>
         <InfoIcon />
@@ -36,7 +36,7 @@ export const mainListItems = (
       <ListItemText primary="Informações Evento" />
     </ListItem>
     </Link>
-    <Link href="http://localhost:3000/spaces" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/spaces" >
     <ListItem button> 
       <ListItemIcon>
         <AddBoxIcon />
@@ -44,7 +44,7 @@ export const mainListItems = (
       <ListItemText primary="Espaços do Evento" />
     </ListItem>
     </Link>
-    <Link href="http://localhost:3000/exhibitors" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/exhibitors" >
     <ListItem button>
       <ListItemIcon>
         <StorefrontIcon />
@@ -52,7 +52,7 @@ export const mainListItems = (
       <ListItemText primary="Expositores" />
     </ListItem>
     </Link>
-    <Link href="http://localhost:3000/visitors" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/visitors" >
     <ListItem button>
       <ListItemIcon>
         <PeopleIcon />
@@ -60,7 +60,7 @@ export const mainListItems = (
       <ListItemText primary="Visitantes" />
     </ListItem>
     </Link>
-    <Link href="http://localhost:3000/sponsors" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/sponsors" >
     <ListItem button>
       <ListItemIcon>
         <BusinessIcon />
@@ -68,7 +68,7 @@ export const mainListItems = (
       <ListItemText primary="Patrocinadores" />
     </ListItem>
     </Link>
-    <Link href="http://localhost:3000/banners" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/banners" >
     <ListItem button>
       <ListItemIcon>
         <ViewCarouselIcon />
@@ -76,7 +76,7 @@ export const mainListItems = (
       <ListItemText primary="Banners" />
     </ListItem>
     </Link>
-    <Link href="http://localhost:3000/speeches" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/speeches" >
     <ListItem button>
       <ListItemIcon>
         <TheatersIcon />
@@ -84,7 +84,7 @@ export const mainListItems = (
       <ListItemText primary="Palestras" />
     </ListItem>
     </Link>
-    <Link href="http://localhost:3000/workshops" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/workshops" >
     <ListItem button>
       <ListItemIcon>
         <SchoolIcon />
@@ -92,7 +92,7 @@ export const mainListItems = (
       <ListItemText primary="Workshops" />
     </ListItem>
     </Link>
-    <Link href="http://localhost:3000/agendas" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/agendas" >
     <ListItem button>
       <ListItemIcon>
         <DateRangeIcon />
@@ -100,7 +100,7 @@ export const mainListItems = (
       <ListItemText primary="Agenda" />
     </ListItem>
     </ Link>
-    <Link href="http://localhost:3000/faq" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/faq" >
     <ListItem button>
       <ListItemIcon>
         <LiveHelpIcon />
@@ -113,7 +113,7 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <div>
-    <Link href="http://localhost:3000/" >
+    <Link href="https://modest-darwin-5935e2.netlify.app/" >
     <ListItem button>
       <ListItemIcon>
         <ExitToAppIcon />
