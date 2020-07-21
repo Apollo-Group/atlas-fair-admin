@@ -21,14 +21,9 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import PersonIcon from '@material-ui/icons/Person';
 import Title from '../../components/Title'
 import PavilionList from '../../components/PavilionList'
+import GridListPavilion from '../../components/GridListPavilion'
 
 import TextField from '@material-ui/core/TextField';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
 import Button from '@material-ui/core/Button'
 import SaveIcon from '@material-ui/icons/Save';
 
@@ -167,7 +162,7 @@ export default function Dashboard() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            Sobre o Evento
+            Espaços do Evento
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -201,11 +196,9 @@ export default function Dashboard() {
             {/* Chart */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <h1>Dados Gerais do Evento</h1>
-
+              <Title>Hall de Entrada </Title>
                 <form>
                   <GeneralForm>
-                    <TextField required id="outlined-required" label="Nome do Evento" defaultValue="Nome do Evento" variant="outlined" style={{ width: '100%' }} />
                     <input
                       accept="image/*"
                       className={classes.input}
@@ -214,75 +207,76 @@ export default function Dashboard() {
                       type="file"
                     />
                     <label htmlFor="contained-button-file">
-                      <Button variant="contained" color="primary" component="span" style={{marginTop: 30}}>
-                        Adicionar Logo
+                      <Button variant="contained" color="primary" component="span">
+                        Adicionar Imagem
                      </Button>
                     </label>
-                    <TextField required id="outlined-required" label="URL do Evento" defaultValue="URL DO EVENTO" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
-                    <TextField
-                      required
-                      id="outlined-multiline-static"
-                      label="Descricao"
-                      multiline
-                      rows={4}
-                      defaultValue="Esse eventao iniciou em 1985 e desde entao..."
-                      variant="outlined"
-                      style={{ width: '100%', marginTop: 30 }}
+                  </GeneralForm>
+
+
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    className={classes.button}
+                    startIcon={<SaveIcon />}
+                    style={{ width: '80%', marginLeft: '10%' }}
+                  >
+                    Salvar
+                 </Button>
+                </form>
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+              <Title>Auditorio </Title>
+                <form>
+                  <GeneralForm>
+                    <input
+                      accept="image/*"
+                      className={classes.input}
+                      id="contained-button-file"
+                      multiple
+                      type="file"
                     />
-                    <DateForm>
-                      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                        <div className="start">
-                          <KeyboardDatePicker
-                            disableToolbar
-                            variant="inline"
-                            format="dd/MM/yyyy"
-                            margin="normal"
-                            id="date-picker-inline"
-                            label="Start Date"
-                            value={selectedDate}
-                            onChange={handleDateChange}
-                            KeyboardButtonProps={{
-                              'aria-label': 'change date',
-                            }}
-                          />
-                          <KeyboardTimePicker
-                            margin="normal"
-                            id="time-picker"
-                            label="Start Hour"
-                            value={selectedDate}
-                            onChange={handleDateChange}
-                            KeyboardButtonProps={{
-                              'aria-label': 'change time',
-                            }}
-                          />
-                        </div>
-                        <div className="end">
-                          <KeyboardDatePicker
-                            disableToolbar
-                            variant="inline"
-                            format="dd/MM/yyyy"
-                            margin="normal"
-                            id="date-picker-inline"
-                            label="End Date"
-                            value={selectedDate}
-                            onChange={handleDateChange}
-                            KeyboardButtonProps={{
-                              'aria-label': 'change date',
-                            }}
-                          />
-                          <KeyboardTimePicker
-                            margin="normal"
-                            id="time-picker"
-                            label="End Hour"
-                            value={selectedDate}
-                            onChange={handleDateChange}
-                            KeyboardButtonProps={{
-                              'aria-label': 'change time',
-                            }}
-                          />
-                        </div>
-                      </MuiPickersUtilsProvider>
-                    </DateForm>
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span">
+                        Adicionar Imagem
+                     </Button>
+                    </label>
+                  </GeneralForm>
+
+
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    className={classes.button}
+                    startIcon={<SaveIcon />}
+                    style={{ width: '80%', marginLeft: '10%' }}
+                  >
+                    Salvar
+                 </Button>
+                </form>
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+              <Title>Background Linear </Title>
+                <form>
+                  <GeneralForm>
+                    <input
+                      accept="image/*"
+                      className={classes.input}
+                      id="contained-button-file"
+                      multiple
+                      type="file"
+                    />
+                    <label htmlFor="contained-button-file">
+                      <Button variant="contained" color="primary" component="span">
+                        Adicionar Imagem
+                     </Button>
+                    </label>
                   </GeneralForm>
 
 
@@ -302,10 +296,20 @@ export default function Dashboard() {
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <h1>Dados Complementares do Evento</h1>
                 <Title>Pavilhão </Title>
                     <TextField required id="outlined-required" label="Nome do Pavilhão" defaultValue="Nome do Pavilhão" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
-                    <TextField required id="outlined-required" label="Descrição do Pavilhão" defaultValue="Descrição do Pavilhão" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <TextField
+                      required
+                      id="outlined-multiline-static"
+                      label="Descricao"
+                      multiline
+                      rows={4}
+                      defaultValue="Esse espaco possui tudo sobre tal categoria da feira..."
+                      variant="outlined"
+                      style={{ width: '100%', marginTop: 30 }}
+                    />
+                    <TextField required id="outlined-required" label="Quant de Estandes" placeholder="10" variant="outlined" style={{ width: '100%', marginTop: 30 }} />
+                    <GridListPavilion />
                     <Button
                     variant="contained"
                     color="primary"

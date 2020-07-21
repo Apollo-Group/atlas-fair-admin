@@ -15,6 +15,8 @@ import SchoolIcon from '@material-ui/icons/School';
 import TheatersIcon from '@material-ui/icons/Theaters';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+
 
 export const mainListItems = (
   <div>
@@ -32,6 +34,14 @@ export const mainListItems = (
         <InfoIcon />
       </ListItemIcon>
       <ListItemText primary="Informações Evento" />
+    </ListItem>
+    </Link>
+    <Link href="http://localhost:3000/spaces" >
+    <ListItem button> 
+      <ListItemIcon>
+        <AddBoxIcon />
+      </ListItemIcon>
+      <ListItemText primary="Espaços do Evento" />
     </ListItem>
     </Link>
     <Link href="http://localhost:3000/exhibitors" >

@@ -12,6 +12,7 @@ import Workshops from '../pages/Workshops'
 import Sponsors from '../pages/Sponsors'
 import Visitors from '../pages/Visitors'
 import FAQ from '../pages/FAQ'
+import Spaces from '../pages/Space'
 
 export default function Routes() {
   return (
@@ -49,6 +50,9 @@ export default function Routes() {
         </Route>
         <Route exact  path="/faq">
           <FAQ />
+        </Route>
+        <Route exact path="/spaces">
+          <Spaces />
         </Route>
       </Switch>
     </Router>
