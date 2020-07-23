@@ -1,0 +1,179 @@
+# Plataforma Admin
+
+## Rotas
+Observacoes:
+GET ou GET/:id: mostrar todas as infos do objeto
+PUT: mesmas infos do POST
+DELETE: Deletar o objeto
+Infos que tiverem um "*" considerar como nao obrigatorio para o registro no Banco de Dados
+
+### SignUp (Utilizar Insomnia)
+    1) Cadastro de um login ADM para criar um Evento
+        POST: 
+            Recebe: nome do evento, password
+
+### Pagina SignIn
+    1) Login na Pagina
+        POST:
+            Recebe: nome do evento, password
+            Retorna: Dados do usuario, Dados do Evento, Token
+
+### Pagina Dashboard
+    1) Se o Evento existir, trazer Dados do Evento
+        GET: 
+            Recebe: ID do Evento
+            Retorna: 
+                Numero de novos cadastros (visitantes) por dia (ultimos 5 dias)
+                Total de Visitantes Cadastrados
+                Total de Estantes Cadastrados
+
+### Pagina Informacoes Evento
+    1) Criar um evento:
+        POST:
+            Recebe: 
+                Nome do evento, 
+                Logo do Evento (imagem), 
+                URL do Evento*, 
+                Descricao do Evento, 
+                Dia de Inicio, 
+                Hora de Inicio, 
+                Dia de Termino, 
+                Hora de Termino
+            Retorna:
+                ID Do Evento Criado  
+
+### Pagina Espacos do Evento
+    1) Hall de Entrada:
+        POST:
+            Recebe: 
+                Imagem do Hall
+                Link para o Pavilhao 1*
+                Link para o Pavilhao 2*
+                Link para o Auditorio*
+                Link para Central de Ajuda*
+    2) Auditorio:
+        POST:
+            Recebe: 
+                Imagem do Auditorio
+
+    3) Background Linear:
+        POST:
+            Recebe: 
+                Imagem do Background Linear
+
+    4) Pavilhao:
+        POST:
+            Nome do Pavilhao
+            Descricao do Pavilhao
+            Quantidade de Estandes no Pavilhao*
+            Imagens do Pavilhao (Imagens multiplas)    
+    
+### Expositores:
+    1) Dados do Expositor:
+        POST:
+            Recebe: 
+                Nome do Expositor
+                Categoria do Estande (Lista de Pavilhoes criados)
+                Descricao do Expositor
+                Contato Whatsapp do Expositor
+                Contato Zoom ou outro web conference (Link do sistema que iremos usar)*
+                Nome Contato do Expositor*
+                Telefone de Contato do Expositor*
+                Celular de Contato do Expositor*
+                Email de Contato do Expositor*
+                Site do Expositor*
+                Imagem do Logo do Expositor
+                PDF 1 de Produtos do Expositor*
+                PDF 2 de Produtos do Expositor*
+                Tipo do Estande
+                Video do Estande (Link)*
+                Imagem do Estande customizado*
+            Retorna:
+                Dados do Expositor com ID
+
+### Visitantes:
+    1) Dados do Visitante ou Expositor:
+        POST:
+            Recebe:
+                Nome 
+                Email 
+                Cidade
+                Estado
+                Pais 
+                Empresa 
+                Genero (Masculino ou Feminino)
+                Categoria (Visitante ou Expositor)
+                Descricao*
+
+### Patrocinadores:
+    1) Dados do Patrocinador:
+        POST:
+            Recebe:
+                Nome do Patrocinador (Empresa)
+                Categoria do Patrocinador (Ouro, Prata ou Bronze)
+                Descricao
+                URL do Patrocinador
+                Imagem do Logo do Patrocinador
+
+### Banners:
+    1) Cadastro de Banners:
+        POST:
+            Recebe: 
+                Nome do Banner
+                Imagem do Banner
+                Posicao do Banner (A, B, C, D,...)
+
+### Palestras:
+    1) Cadastro de Palestras:
+        POST:
+            Recebe:
+                Titulo da Palestras
+                Categoria da Palestra
+                Local da Palestra (Auditorio Principal, Auditorio 1, Auditorio 2)
+                Descricao
+                URL Link da Palestra
+                URL Link 2 da Palestra (Backup)
+                Nome do Palestrante
+                Descricao do Palestrante
+                Imagem do Palestrante
+                Inicio Dia 
+                Inicio Hora
+                Termino Dia
+                Termino Hora
+
+### Workshops:
+    1) Cadastro de Workshops:
+        POST:
+            Recebe:
+                Titulo da Workshops
+                Categoria da Workshop
+                Local da Workshop (Sala Principal, Sala 1, Sala 2)
+                Descricao
+                URL Link da Workshop
+                URL Link 2 da Workshop (Backup)
+                Nome do Facilitador
+                Descricao do Facilitador
+                Imagem do Facilitador
+                Inicio Dia 
+                Inicio Hora
+                Termino Dia
+                Termino Hora
+
+### Agenda:
+    1) Visualizar a Agenda de Palestras e Workshops:
+        GET:
+            Recebe: 
+                ID do Evento
+                Opcional: Categoria (Todos, Palestras, Workshops)
+                Opcional: Local (Auditorio Principal, Auditorio 1...)
+                Opcional: Dia (22/08/2020, 23/08/2020...)
+            Retorna:
+                Lista de Palestras e Eventos, considerando os filtros quando receber parametros opcionais
+
+### FAQ:
+    1) Criar Pergunta e Resposta
+        POST:
+            Recebe:
+                Pergunta
+                Resposta
+                Numero indicando a ordem que ira aparecer no FAQ
