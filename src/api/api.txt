@@ -39,6 +39,8 @@ Infos que tiverem um "*" considerar como nao obrigatorio para o registro no Banc
                 Hora de Inicio, 
                 Dia de Termino, 
                 Hora de Termino
+                Cor Principal
+                Cor Secundaria
             Retorna:
                 ID Do Evento Criado  
 
